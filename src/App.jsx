@@ -9,7 +9,8 @@ import FeaturedCountries from "./components/FeaturedCountries";
 import BlogSection from "./components/BlogSection";
 import SocialHighlights from "./components/SocialHighlights";
 import Footer from "./components/Footer";
-import ResultsPage from "./components/ResultsPage"; // Create this page
+import ResultsPage from "./components/ResultsPage"; // Your Results Page
+import UniversityPage from "./components/veiwmore"; // The Program Details Page (UniversityPage)
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/results" element={<ResultsPage />} />
+            <Route path="/programs/:id" element={<UniversityPage />} />  {/* Add the program details route */}
           </Routes>
         </main>
         <Footer />

@@ -58,7 +58,7 @@ export default function ResultsPage() {
                 </div>
               </div>
               <Link to={`/programs/${program.id}`} className="text-blue-600 hover:text-blue-800">
-                View More Information
+                 View More Information
               </Link>
             </div>
           ))}
