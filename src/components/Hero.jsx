@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Search, BookOpen, Building2, Globe2 } from 'lucide-react';
+import { programs } from '../data/programs';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hero() {
+  const [query, setQuery] = useState('');
+  const [location, setLocation] = useState('');
+  const [filteredTitles, setFilteredTitles] = useState([]);
+  const [filteredLocations, setFilteredLocations] = useState([]);
+  const navigate = useNavigate();
+
+  const handleTitleChange = (e) => {
+    const value = e.target.value;
+    setQuery(value);
+    setFilteredTitles(
+      programs
+        .filter((program) =>
+          program.title.toLowerCase().includes(value.toLowerCase())
+        )
+        .map((program) => program.title)
+    );
+  };
+
+  const handleLocationChange = (e) => {
+    const value = e.target.value;
+    setLocation(value);
+    setFilteredLocations(
+      programs
+        .filter((program) =>
+          program.location.toLowerCase().includes(value.toLowerCase())
+        )
+        .map((program) => program.location)
+    );
+  };
+
+  const handleSearch = () => {
+    navigate(`/results?query=${query}&location=${location}`);
+  };
+
   return (
     <div className="bg-gradient-to-r from-indigo-600 to-purple-600 pt-32 pb-20 px-4">
       <div className="max-w-7xl mx-auto text-center">
@@ -11,43 +47,79 @@ export default function Hero() {
         <p className="text-xl text-indigo-100 mb-8">
           Compare thousands of graduate programs worldwide
         </p>
-        
-        <div className="bg-white p-4 rounded-lg shadow-lg max-w-3xl mx-auto">
+
+        <div className="bg-white p-4 rounded-lg shadow-lg max-w-3xl mx-auto relative">
           <div className="flex flex-col md:flex-row gap-4">
+            {/* Title Search */}
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="What do you want to study?"
                 className="w-full pl-10 pr-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                value={query}
+                onChange={handleTitleChange}
+                onBlur={() => setTimeout(() => setFilteredTitles([]), 200)}
               />
+              {filteredTitles.length > 0 && (
+                <ul
+                  className="absolute bg-white border w-full mt-1 rounded-md shadow-lg z-10"
+                  onMouseDown={(e) => e.preventDefault()}
+                >
+                  {filteredTitles.map((title, index) => (
+                    <li
+                      key={index}
+                      className="p-2 cursor-pointer hover:bg-gray-100"
+                      onClick={() => {
+                        setQuery(title);
+                        setFilteredTitles([]);
+                      }}
+                    >
+                      {title}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
+
+            {/* Location Search */}
             <div className="flex-1 relative">
               <Globe2 className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Where?"
                 className="w-full pl-10 pr-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                value={location}
+                onChange={handleLocationChange}
+                onBlur={() => setTimeout(() => setFilteredLocations([]), 200)}
               />
+              {filteredLocations.length > 0 && (
+                <ul
+                  className="absolute bg-white border w-full mt-1 rounded-md shadow-lg z-10"
+                  onMouseDown={(e) => e.preventDefault()}
+                >
+                  {filteredLocations.map((loc, index) => (
+                    <li
+                      key={index}
+                      className="p-2 cursor-pointer hover:bg-gray-100"
+                      onClick={() => {
+                        setLocation(loc);
+                        setFilteredLocations([]);
+                      }}
+                    >
+                      {loc}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            <button className="bg-indigo-600 text-white px-8 py-2 rounded-md hover:bg-indigo-700">
+
+            <button
+              className="bg-indigo-600 text-white px-8 py-2 rounded-md hover:bg-indigo-700"
+              onClick={handleSearch}
+            >
               Search
             </button>
-          </div>
-        </div>
-        
-        <div className="flex justify-center space-x-8 mt-12">
-          <div className="text-white text-center">
-            <BookOpen className="h-8 w-8 mx-auto mb-2" />
-            <p className="text-lg font-semibold">50,000+ Programs</p>
-          </div>
-          <div className="text-white text-center">
-            <Building2 className="h-8 w-8 mx-auto mb-2" />
-            <p className="text-lg font-semibold">1,000+ Universities</p>
-          </div>
-          <div className="text-white text-center">
-            <Globe2 className="h-8 w-8 mx-auto mb-2" />
-            <p className="text-lg font-semibold">100+ Countries</p>
           </div>
         </div>
       </div>

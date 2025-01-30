@@ -40,9 +40,14 @@ Welcome to **Masterslee**, a comprehensive university search platform designed f
    ```bash
    npm install
    ```
+5. Intall react-router
+     ```bash
+   npm install react-router-dom
+   ```
+
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Contribution Guidelines
