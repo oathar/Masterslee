@@ -1,6 +1,7 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { programs } from "../data/programs";
+import { Clock, MapPin, Star, Calendar, DollarSign, Briefcase } from 'lucide-react';
 
 export default function ResultsPage() {
   const location = useLocation();
@@ -26,6 +27,39 @@ export default function ResultsPage() {
               <h2 className="text-xl font-semibold">{program.title}</h2>
               <p className="text-gray-600">{program.university}</p>
               <p className="text-gray-500">{program.location}</p>
+              <div className="flex flex-wrap justify-between mb-4">
+                <div className="flex items-center text-gray-600">
+                  <Clock className="h-5 w-5 mr-2" />
+                  <span>Duration: {program.duration}</span>
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <Star className="h-5 w-5 mr-2 text-yellow-400" />
+                  <span>Acceptance Rate: {program.acceptanceRate}%</span>
+                </div>
+              </div>
+              <div className="flex flex-wrap justify-between mb-4">
+                <div className="flex items-center text-gray-600">
+                  <MapPin className="h-5 w-5 mr-2" />
+                  <span>Mode: {program.mode}</span>
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  <span>Deadline: {program.deadline}</span>
+                </div>
+              </div>
+              <div className="flex flex-wrap justify-between mb-4">
+                <div className="flex items-center text-gray-600">
+                  <DollarSign className="h-5 w-5 mr-2" />
+                  <span>Scholarships: {program.scholarships}</span>
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <Briefcase className="h-5 w-5 mr-2" />
+                  <span>Type: {program.type}</span>
+                </div>
+              </div>
+              <Link to={`/programs/${program.id}`} className="text-blue-600 hover:text-blue-800">
+                View More Information
+              </Link>
             </div>
           ))}
         </div>
@@ -34,4 +68,4 @@ export default function ResultsPage() {
       )}
     </div>
   );
-}
+};
