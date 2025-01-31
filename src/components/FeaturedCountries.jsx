@@ -1,24 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const countries = [
   {
-    name: "United States",
+    name: "USA",
     image: "https://images.unsplash.com/photo-1501466044931-62695aada8e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    programCount: 12543,
-    universities: 450
+    programCount: 5,
+    universities: 5
   },
   {
-    name: "United Kingdom",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    programCount: 8765,
-    universities: 150
-  },
-  {
-    name: "Germany",
+    name: "Switzerland",
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    programCount: 6543,
-    universities: 120
-  }
+    programCount: 1,
+    universities: 1
+  },
+  {
+    name: "UK",
+    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    programCount: 2,
+    universities: 2
+  },
+  
 ];
 
 export default function FeaturedCountries() {
@@ -28,7 +30,11 @@ export default function FeaturedCountries() {
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured Countries</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {countries.map((country) => (
-            <div key={country.name} className="relative group overflow-hidden rounded-xl">
+            <Link 
+              key={country.name} 
+              to={`/results?location=${encodeURIComponent(country.name)}`} 
+              className="relative group overflow-hidden rounded-xl block"
+            >
               <img 
                 src={country.image} 
                 alt={country.name}
@@ -40,7 +46,7 @@ export default function FeaturedCountries() {
                   {country.programCount.toLocaleString()} programs • {country.universities} universities
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

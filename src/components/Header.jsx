@@ -12,15 +12,15 @@ export default function Header() {
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            <a href="#" className="text-gray-700 hover:text-indigo-600">Programs</a>
-            <a href="#" className="text-gray-700 hover:text-indigo-600">Universities</a>
+            <a href="Results" className="text-gray-700 hover:text-indigo-600">Programs</a>
+            <a href="Universities" className="text-gray-700 hover:text-indigo-600">Universities</a>
             <a href="#" className="text-gray-700 hover:text-indigo-600">Countries</a>
             <a href="#" className="text-gray-700 hover:text-indigo-600">Resources</a>
           </nav>
           
           <div className="flex items-center space-x-4">
             <Globe className="h-5 w-5 text-gray-600" />
-            <button className="bg-indigo-600 text-white px-4 py-2rounded-md hover:bg-indigo-700">
+            <button className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
               Sign In
             </button>
             <Menu className="h-6 w-6 md:hidden text-gray-600" />

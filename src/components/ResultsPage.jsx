@@ -9,16 +9,16 @@ export default function ResultsPage() {
   const searchQuery = queryParams.get("query")?.toLowerCase() || "";
   const searchLocation = queryParams.get("location")?.toLowerCase() || "";
 
-  // Filter programs based on user input
+  // Filter programs based on location (country)
   const filteredPrograms = programs.filter(
-    (program) =>
-      program.title.toLowerCase().includes(searchQuery) &&
-      program.location.toLowerCase().includes(searchLocation)
+    (program) => 
+      (searchQuery ? program.title.toLowerCase().includes(searchQuery) : true) &&
+      (searchLocation ? program.location.toLowerCase().includes(searchLocation) : true)
   );
 
   return (
     <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Search Results</h1>
+      <h1 className="text-3xl font-bold mb-6">Programs in {searchLocation ? searchLocation.charAt(0).toUpperCase() + searchLocation.slice(1) : "Selected Country"}</h1>
       {filteredPrograms.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPrograms.map((program) => (
@@ -64,7 +64,7 @@ export default function ResultsPage() {
           ))}
         </div>
       ) : (
-        <p className="text-gray-600">No results found.</p>
+        <p className="text-gray-600">No results found for this country.</p>
       )}
     </div>
   );

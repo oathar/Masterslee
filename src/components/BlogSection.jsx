@@ -1,16 +1,19 @@
 import React from 'react';
 import { Calendar, ArrowRight } from 'lucide-react';
+import { Link } from "react-router-dom";
+
+
 
 const blogs = [
   {
-    title: "How to Choose the Right Master's Program",
-    excerpt: "Tips and strategies to help you make an informed decision about your graduate studies.",
+    title: "Asian Development Bank Scholarship 2026 | Fully Funded Scholarships in Japan",
+    excerpt: "Learn how to apply for the Asian Development Bank Scholarship 2026 and get fully funded scholarships in Japan.",
     date: "Mar 15, 2024",
     image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Top Scholarships for International Students",
-    excerpt: "Comprehensive guide to finding and applying for scholarships worldwide.",
+    title: "Fully Funded Rotary Peace Fellowships for Masters",
+    excerpt: "Consider using our Professional Services to polish your application and stand out from the crowd.",
     date: "Mar 12, 2024",
     image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   }
@@ -38,9 +41,9 @@ export default function BlogSection() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{post.title}</h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <button className="text-indigo-600 font-medium hover:text-indigo-700">
-                  Read more →
-                </button>
+                  <Link to={`/blog?title=${encodeURIComponent(post.title)}`} className="text-indigo-600 font-medium hover:text-indigo-700">
+                    Read more →
+                  </Link>
               </div>
             </div>
           ))}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Clock, MapPin, Star } from 'lucide-react';
 
 export default function ProgramCard({ program }) {
@@ -24,9 +25,13 @@ export default function ProgramCard({ program }) {
           </div>
         </div>
         
-        <button className="mt-6 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700">
+        {/* Updated View Program Button with Link */}
+        <Link 
+          to={`/programs/${program.id}`} 
+          className="mt-6 block text-center bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition"
+        >
           View Program
-        </button>
+        </Link>
       </div>
     </div>
   );

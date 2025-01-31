@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Search, BookOpen, Building2, Globe2 } from 'lucide-react';
-import { programs } from '../data/programs';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Search, Globe2 } from "lucide-react";
+import { programs } from "../data/programs";
+import { useNavigate } from "react-router-dom";
+import Waves from "../components/Waves"; // Ensure correct path
 
 export default function Hero() {
-  const [query, setQuery] = useState('');
-  const [location, setLocation] = useState('');
+  const [query, setQuery] = useState("");
+  const [location, setLocation] = useState("");
   const [filteredTitles, setFilteredTitles] = useState([]);
   const [filteredLocations, setFilteredLocations] = useState([]);
   const navigate = useNavigate();
@@ -39,9 +40,27 @@ export default function Hero() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 pt-32 pb-20 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+    <div className="relative bg-gradient-to-r from-black to-blue-900 pt-32 pb-20 px-4">
+      {/* Waves Animation (only on Home) */}
+      <div className="absolute inset-0">
+        <Waves
+          lineColor="#fff"
+          backgroundColor="rgba(255, 255, 255, 0.2)"
+          waveSpeedX={0.02}
+          waveSpeedY={0.01}
+          waveAmpX={40}
+          waveAmpY={20}
+          friction={0.9}
+          tension={0.01}
+          maxCursorMove={120}
+          xGap={12}
+          yGap={36}
+        />
+      </div>
+
+      {/* Content Over the Animation */}
+      <div className="max-w-7xl mx-auto text-center relative z-10">
+        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
           Find Your Perfect Master's Program
         </h1>
         <p className="text-xl text-indigo-100 mb-8">

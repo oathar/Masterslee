@@ -9,11 +9,11 @@ import {
 } from 'lucide-react';
 
 export const disciplines = [
-  { icon: Code, name: "Computer Science & IT", count: 4521 },
-  { icon: Brain, name: "Psychology", count: 2341 },
-  { icon: BarChart3, name: "Business & Management", count: 5632 },
-  { icon: TestTube2, name: "Engineering", count: 3892 },
-  { icon: Stethoscope, name: "Medicine & Health", count: 2987 },
-  { icon: Scale, name: "Law", count: 1543 },
-  { icon: Palette, name: "Arts & Design", count: 2198 }
+  { icon: Code, name: "Computer Science & IT", count: 6 },
+  { icon: Brain, name: "Psychology", count: 0 },
+  { icon: BarChart3, name: "Business & Management", count: 2 },
+  { icon: TestTube2, name: "Engineering", count: 1 },
+  { icon: Stethoscope, name: "Medicine & Health", count: 0 },
+  { icon: Scale, name: "Law", count: 0 },
+  { icon: Palette, name: "Arts & Design", count: 0 }
 ];
