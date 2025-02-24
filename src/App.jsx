@@ -13,6 +13,8 @@ import ResultsPage from "./components/ResultsPage";
 import UniversityPage from "./components/viewmore";
 import BlogPage from "./components/BlogPage"; // Import BlogPage
 import Waves from "./components/Waves"; // Ensure correct path
+import Signin from './components/Signin'; // Import your Signin component
+import Register from './components/Register';// Import your Register component
 import "@fontsource/playwrite-in"; // Import font globally
 
 function Home() {
@@ -40,6 +42,8 @@ function App() {
             <Route path="/results" element={<ResultsPage />} />
             <Route path="/programs/:id" element={<UniversityPage />} />
             <Route path="/blog" element={<BlogPage />} /> {/* Added BlogPage Route */}
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/register" element={<Register />} />  
           </Routes>
         </main>
         <Footer />
