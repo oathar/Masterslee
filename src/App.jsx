@@ -15,7 +15,9 @@ import BlogPage from "./components/BlogPage"; // Import BlogPage
 import Waves from "./components/Waves"; // Ensure correct path
 import Signin from './components/Signin'; // Import your Signin component
 import Register from './components/Register';// Import your Register component
+import Founder from './components/Founder'; // Import your Founder component
 import "@fontsource/playwrite-in"; // Import font globally
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Home() {
   return (
@@ -27,6 +29,7 @@ function Home() {
       <FeaturedCountries />
       <BlogSection />
       <SocialHighlights />
+      <Founder />
     </>
   );
 }
@@ -43,7 +46,8 @@ function App() {
             <Route path="/programs/:id" element={<UniversityPage />} />
             <Route path="/blog" element={<BlogPage />} /> {/* Added BlogPage Route */}
             <Route path="/signin" element={<Signin />} />
-            <Route path="/register" element={<Register />} />  
+            <Route path="/register" element={<Register />} /> 
+             <Route path="/founder" element={<Founder />} />
           </Routes>
         </main>
         <Footer />

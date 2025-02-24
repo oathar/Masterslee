@@ -1,3 +1,5 @@
+// This card compnents is for the featured component in the home page 
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, MapPin, Star } from 'lucide-react';

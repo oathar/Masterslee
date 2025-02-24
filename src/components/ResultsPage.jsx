@@ -1,3 +1,5 @@
+// this is the resultpage which is get on "view more information" on the card of 9 
+
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import { programs } from "../data/programs";

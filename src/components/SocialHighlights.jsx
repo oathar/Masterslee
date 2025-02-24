@@ -4,16 +4,19 @@ import { Twitter, Instagram } from 'lucide-react';
 const posts = [
   {
     platform: "twitter",
+    image: "https://scholarsavenue.com/wp-content/uploads/2024/04/logo-white-1.png.webp", 
     content: "Just launched our new scholarship program for international students! 🎓 #HigherEducation #Scholarships",
     engagement: "2.5K likes",
-    date: "2h ago"
+    date: "2h ago",
+    url: "https://x.com/scholars_avenue"
   },
   {
     platform: "instagram",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.pexels.com/photos/5426401/pexels-photo-5426401.jpeg",
     content: "Campus life at its finest! 📚✨ #StudentLife #University",
     engagement: "3.2K likes",
-    date: "5h ago"
+    date: "5h ago",
+    url: "https://www.instagram.com/thescholarsavenue/"
   }
 ];
 
@@ -24,7 +27,13 @@ export default function SocialHighlights() {
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Social Media Highlights</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((post, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-md">
+            <a
+              key={index}
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-xl p-6 shadow-md block"
+            >
               <div className="flex items-center mb-4">
                 {post.platform === "twitter" ? (
                   <Twitter className="h-5 w-5 text-blue-400" />
@@ -38,7 +47,7 @@ export default function SocialHighlights() {
               )}
               <p className="text-gray-800 mb-3">{post.content}</p>
               <p className="text-gray-600 text-sm">{post.engagement}</p>
-            </div>
+            </a>
           ))}
         </div>
       </div>
