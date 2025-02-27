@@ -23,9 +23,9 @@ Welcome to **Masterslee**, a comprehensive university search platform designed f
 
 ## Technology Stack
 - **Frontend:** HTML, CSS, JavaScript (React.js or Vue.js)
-- **Backend:** Node.js with Express.js
-- **Database:** MongoDB or PostgreSQL
-- **APIs:** RESTful APIs for program and university data
+- **Backend:** Node.js
+- **Database:** Supabase
+
 
 ## Installation
 1. Clone the repository:
