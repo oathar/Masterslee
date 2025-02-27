@@ -18,6 +18,7 @@ import Register from './components/Register';// Import your Register component
 import Founder from './components/Founder'; // Import your Founder component
 import "@fontsource/playwrite-in"; // Import font globally
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Universities from "./components/Universities";   
 
 function Home() {
   return (
@@ -30,6 +31,7 @@ function Home() {
       <BlogSection />
       <SocialHighlights />
       <Founder />
+      <Universities/>
     </>
   );
 }
@@ -48,6 +50,9 @@ function App() {
             <Route path="/signin" element={<Signin />} />
             <Route path="/register" element={<Register />} /> 
              <Route path="/founder" element={<Founder />} />
+             <Route path="/universities" element={<Universities />} />
+             <Route path="/universities/:name" element={<UniversityPage />} />
+             
           </Routes>
         </main>
         <Footer />
