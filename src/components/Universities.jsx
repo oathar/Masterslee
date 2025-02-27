@@ -1,47 +1,44 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Universities() {
-  const navigate = useNavigate();
-
   const universities = [
     {
       name: "Stanford University",
-      image: "https://imgs.search.brave.com/-3al_hzl4ooqZLHBSS3GI6B5AVGd3Pu0bhx2jj-5v-w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYXJk/aW5hbGF0d29yay5z/dGFuZm9yZC5lZHUv/c2l0ZXMvY2FyZGlu/YWxhdHdvcmsvZmls/ZXMvc3R5bGVzL2N0/YV8xeF81OTZ4Mzk3/L3B1YmxpYy9tZWRp/YS9pbWFnZS9nYWxs/ZXJ5L3N0YW5mb3Jk/LXN1bnNldF8wLmpw/Zz9oPWM3NDc1MGY2/Jml0b2s9Z3Riazdl/X2s",
-      path: "/universities/stanford",
+      image: "https://olmsted.org/wp-content/uploads/2023/06/Main-Quad-from-Palm-Dive-by-Linda-Cicero.png"
     },
     {
       name: "University of California, San Francisco",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkCOLkq1Vt9UeUNha2T5Oe7Fyzdf3T5tOwxQ&s",
-      path: "/universities/ucsf",
+      image: "https://www.ruseducation.in/wp-content/uploads/2022/01/university-of-california-san-francisco-school-of-medicine.webp"
     },
     {
-        name: "Harvard University",
-        image: "https://cdn.britannica.com/69/141169-050-CD5892EB/Baker-Library-Harvard-Business-School-Boston-University.jpg",
-      },
-      {
-        name: "University of California, Berkeley",
-        image: "https://images.shiksha.com/mediadata/images/1495170014php5jrKAW.jpeg",
-      },
+      name: "Harvard University",
+      image: "https://vnis.edu.vn/wp-content/uploads/2023/09/Harvard-University-1-1.webp"
+    },
+    {
+      name: "University of California, Berkeley",
+      image: "https://images.shiksha.com/mediadata/images/1495170014php5jrKAW.jpeg"
+    }
   ];
 
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-6">Universities</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {universities.map((uni, index) => (
-          <div
-            key={index}
-            className="relative p-4 border rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer"
+        {universities.map((uni) => (
+          <Link
+            key={uni.name}
+            to="#"
+            className="relative group overflow-hidden rounded-xl block"
           >
-            {/* Background Image */}
-            <div
-              className="h-48 w-full bg-cover bg-center rounded-lg"
-              style={{ backgroundImage: `url(${uni.image})` }}
-            ></div>
-
-            {/* University Name */}
-            <h2 className="text-xl font-semibold mt-4 text-center">{uni.name}</h2>
-          </div>
+            <img
+              src={uni.image}
+              alt={uni.name}
+              className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 p-6 flex flex-col justify-end">
+              <h3 className="text-2xl font-bold text-white mb-2">{uni.name}</h3>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
