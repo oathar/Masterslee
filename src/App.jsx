@@ -19,7 +19,8 @@ import Founder from './components/Founder';
 import "@fontsource/playwrite-in";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Universities from "./components/Universities";
-import Countries from "./components/Countries";  // ✅ Import Countries Component
+import Countries from "./components/Countries";  
+import Resources from "./components/Resources";
 
 function Home() {
   return (
@@ -52,7 +53,8 @@ function App() {
             <Route path="/founder" element={<Founder />} />
             <Route path="/universities" element={<Universities />} />
             <Route path="/universities/:name" element={<UniversityPage />} />
-            <Route path="/countries" element={<Countries />} /> {/* ✅ Add Route for Countries */}
+            <Route path="/countries" element={<Countries />} />
+            <Route path="/resources" element={<Resources />} /> 
           </Routes>
         </main>
         <Footer />
