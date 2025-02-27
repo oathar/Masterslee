@@ -1,146 +1,33 @@
-export const programs = [
-  {
-    id: 1,
-    title: "Master of Science in Computer Science",
-    university: "Massachusetts Institute of Technology (MIT)",
-    location: "Cambridge, MA, USA",
-    duration: "2 years",
-    acceptanceRate: 8,
-    mode: "on campus",
-    deadline: "December 15th",
-    discipline: "Computer Science & IT",
-    scholarships: "Available",
-    type: "full-time",
-    rating: 4.8,
-    image: "https://img.freepik.com/premium-photo/quotstudents-engaged-bustling-classroom-activityquot_1324785-80116.jpg?w=360",
-    website: "https://www.mit.edu/"
-  },
-  {
-    id: 2,
-    title: "Master of Business Administration (MBA)",
-    university: "Harvard Business School",
-    location: "Boston, MA, USA",
-    duration: "2 years",
-    acceptanceRate: 10,
-    mode: "on campus",
-    deadline: "Varies by round",
-    discipline: "Business & Management",
-    scholarships: "Available",
-    type: "Full-time",
-    rating: 4.9,
-    image: "https://img.freepik.com/free-photo/close-up-young-business-person-doing-internship_23-2149305363.jpg?t=st=1738256127~exp=1738259727~hmac=dec9a39ff12e28b55763ffbaa06e94ed43dfe695036f821156a9aee32c715b5c&w=996",
-    website: "https://www.hbs.edu/mba"
-  },
-  {
-    id: 3,
-    title: "Master of Science in Artificial Intelligence",
-    university: "Stanford University",
-    location: "Stanford, CA, USA",
-    duration: "2 years",
-    acceptanceRate: 12,
-    mode: "on campus",
-    deadline: "December 1st",
-    discipline: "Computer Science & IT",
-    scholarships: "Available",
-    type: "Full-time",
-    rating: 4.9,
-    image: "https://plus.unsplash.com/premium_photo-1682124651258-410b25fa9dc0?q=80&w=1921&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    website: "https://www.stanford.edu/"
-  },
-  {
-    id: 4,
-    title: "Master of Science in Computer Science",
-    university: "University of California, Berkeley",
-    location: "Berkeley, CA, USA",
-    duration: "2 years",
-    acceptanceRate: 17, // Approximate
-    mode: "on campus",
-    deadline: "Varies by program", // Check website
-    discipline: "Computer Science & IT",
-    scholarships: "Available",
-    type: "full-time",
-    rating: 4.9, // Approximate
-    image: "https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010130.jpg?t=st=1738253952~exp=1738257552~hmac=033d6487a4df29bccb8565696d982e25f17af05312c071bfcc73188c004df6fd&w=996",
-    website: "https://www.berkeley.edu/"
-  },
-  {
-    id: 5,
-    title: "Master of Science in CS & Cybersecurity",
-    university: "University of Oxford",
-    location: "Oxford, UK",
-    duration: "1 year",
-    acceptanceRate: 20,
-    mode: "on campus",
-    deadline: "Varies by program",
-    discipline: "Computer Science & IT",
-    scholarships: "Available",
-    type: "Full-time",
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    website: "https://www.ox.ac.uk/"
-  },
-  {
-    id: 6,
-    title: "Master of Science in Software Engineering",
-    university: "University of Waterloo",
-    location: "Waterloo, Ontario, Canada",
-    duration: "2 years",
-    acceptanceRate: 25,
-    mode: "on campus",
-    deadline: "Varies by program",
-    discipline: "Engineering",
-    scholarships: "Available",
-    type: "Full-time",
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1580894906475-403276d3942d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    website: "https://uwaterloo.ca/"
-  },
-  {
-    id: 7,
-    title: "Master of Science in Robotics",
-    university: "ETH Zurich",
-    location: "Zurich, Switzerland",
-    duration: "1.5 - 2 years",
-    acceptanceRate: 30,
-    mode: "on campus",
-    deadline: "Varies by program",
-    discipline: "Computer Science & IT",
-    scholarships: "Available",
-    type: "Full-time",
-    rating: 4.8,
-    image: "https://img.freepik.com/free-photo/teens-doing-experiments-robotics-laboratory-boy-protective-glasses-touching-robot_1268-23720.jpg?t=st=1738256358~exp=1738259958~hmac=6264d00f7bed4e8bc0b466a3248e83e02374c91873e669702d850602fd4ac129&w=996",
-    website: "https://www.ethz.ch/"
-  },
-  {
-    id: 8,
-    title: "Master of Science in Bioinformatics",
-    university: "University of California, San Francisco (UCSF)",
-    location: "San Francisco, CA, USA",
-    duration: "2 years",
-    acceptanceRate: 20,
-    mode: "on campus",
-    deadline: "Varies by program",
-    discipline: "Computer Science & IT",
-    scholarships: "Available",
-    type: "Full-time",
-    rating: 4.6,
-    image: "https://plus.unsplash.com/premium_photo-1668487827069-20e94cad68c7?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    website: "https://www.ucsf.edu/"
-  },
-  {
-    id: 9,
-    title: "Master in Finance",
-    university: "London Business School",
-    location: "London, UK",
-    duration: "15-21 months",
-    acceptanceRate: 25,
-    mode: "on campus",
-    deadline: "Varies by round",
-    discipline: "Business & Management",
-    scholarships: "Available",
-    type: "Full-time",
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-     website: "https://www.london.edu/"
-  },
-];
+import { supabase } from "../supabase";
+
+// Fetch programs from Supabase
+export const fetchPrograms = async () => {
+  const { data, error } = await supabase
+    .from('Main')
+    .select('*');
+
+  console.log(data); // Log all retrieved data
+
+  if (error) {
+    console.error('Error fetching programs:', error);
+    return [];
+  }
+
+  return data.map(program => ({
+    id: program.id,
+    title: program.ProgramName,
+    university: program.University,
+    location: program.adress,
+    duration: program.Duration,
+    mode: program.Timing,
+    deadline: program.Deadline,
+    discipline: program.Discipline,
+    type: program.Type,
+    rating: program.Rating,
+    image: program.img,
+    website: program.link,
+  }));
+};
+
+// Usage example
+export const programs = await fetchPrograms(); // Fetch real data from Supabase

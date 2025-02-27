@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/playwrite-in": "^5.1.1",
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "@supabase/supabase-js": "^2.49.1",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

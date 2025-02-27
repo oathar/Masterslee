@@ -30,9 +30,7 @@ export default function UniversityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <p className="text-gray-700"><strong>Duration:</strong> {program.duration}</p>
             <p className="text-gray-700"><strong>Mode:</strong> {program.mode}</p>
-            <p className="text-gray-700"><strong>Acceptance Rate:</strong> {program.acceptanceRate}%</p>
             <p className="text-gray-700"><strong>Deadline:</strong> {program.deadline}</p>
-            <p className="text-gray-700"><strong>Scholarships:</strong> {program.scholarships}</p>
             <p className="text-gray-700"><strong>Type:</strong> {program.type}</p>
           </div>
 

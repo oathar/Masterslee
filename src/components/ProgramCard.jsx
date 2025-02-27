@@ -4,6 +4,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, MapPin, Star } from 'lucide-react';
 
+
+
 export default function ProgramCard({ program }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
