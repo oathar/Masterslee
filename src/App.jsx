@@ -11,14 +11,15 @@ import SocialHighlights from "./components/SocialHighlights";
 import Footer from "./components/Footer";
 import ResultsPage from "./components/ResultsPage";
 import UniversityPage from "./components/viewmore";
-import BlogPage from "./components/BlogPage"; // Import BlogPage
-import Waves from "./components/Waves"; // Ensure correct path
-import Signin from './components/Signin'; // Import your Signin component
-import Register from './components/Register';// Import your Register component
-import Founder from './components/Founder'; // Import your Founder component
-import "@fontsource/playwrite-in"; // Import font globally
+import BlogPage from "./components/BlogPage";
+import Waves from "./components/Waves";
+import Signin from './components/Signin';
+import Register from './components/Register';
+import Founder from './components/Founder';
+import "@fontsource/playwrite-in";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Universities from "./components/Universities";   
+import Universities from "./components/Universities";
+import Countries from "./components/Countries";  // ✅ Import Countries Component
 
 function Home() {
   return (
@@ -31,7 +32,6 @@ function Home() {
       <BlogSection />
       <SocialHighlights />
       <Founder />
-      
     </>
   );
 }
@@ -46,19 +46,19 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/results" element={<ResultsPage />} />
             <Route path="/programs/:id" element={<UniversityPage />} />
-            <Route path="/blog" element={<BlogPage />} /> {/* Added BlogPage Route */}
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/signin" element={<Signin />} />
-            <Route path="/register" element={<Register />} /> 
-             <Route path="/founder" element={<Founder />} />
-             <Route path="/universities" element={<Universities />} />
-             <Route path="/universities/:name" element={<UniversityPage />} />
-             
+            <Route path="/register" element={<Register />} />
+            <Route path="/founder" element={<Founder />} />
+            <Route path="/universities" element={<Universities />} />
+            <Route path="/universities/:name" element={<UniversityPage />} />
+            <Route path="/countries" element={<Countries />} /> {/* ✅ Add Route for Countries */}
           </Routes>
         </main>
         <Footer />
       </div>
     </Router>
   );
-};
+}
 
 export default App;
